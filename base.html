@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimal Website</title>
+  <style>
+    :root {
+      --primary-color: #457D58;
+      --secondary-color: #CBDDD1;
+      --dark-color: #272727;
+      --light-color: white;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: var(--light-color);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    footer {
+      background-color: var(--dark-color);
+      color: var(--light-color);
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .markdown {
+      background-color: var(--secondary-color);
+      padding: 2rem;
+      border-radius: 8px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .markdown h1, .markdown h2, .markdown h3 {
+      color: var(--primary-color);
+    }
+
+    .markdown pre {
+      background-color: var(--light-color);
+      padding: 1rem;
+      border: 1px solid var(--dark-color);
+      overflow: auto;
+    }
+
+    .video-container {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .video-container img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>My Website</div>
+    <nav>
+      <a href="#about">About Us</a>
+      <a href="#documentation">Documentation</a>
+      <a href="#connect">Connect</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h1>About Us</h1>
+      <p>Welcome to our website! We are committed to delivering a simple, elegant experience for our users.</p>
+    </section>
+
+    <section id="documentation">
+      <h1>Documentation</h1>
+      <div class="video-container">
+        <img src="demo.gif" alt="Demo Video">
+      </div>
+      <div class="markdown">
+        <h2>Getting Started</h2>
+        <p>To get started, follow the steps below:</p>
+        <pre>
+1. Clone the repository
+2. Install dependencies
+3. Run the application
+        </pre>
+        <h2>Features</h2>
+        <ul>
+          <li>Clean design</li>
+          <li>Easy to use</li>
+          <li>Lightweight</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="connect">
+      <h1>Connect</h1>
+      <p>Feel free to reach out to us via email at <a href="mailto:contact@website.com">contact@website.com</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 My Website. All rights reserved.
+  </footer>
+</body>
+</html>
