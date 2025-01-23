@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlackBoxScanner Documentation</title>
+  <style>
+    :root {
+      --primary-color: #457D58;
+      --secondary-color: #CBDDD1;
+      --dark-color: #272727;
+      --light-color: white;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    h1, h2, h3 {
+      color: var(--primary-color);
+    }
+    code {
+      background-color: var(--secondary-color);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    pre {
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BlackBoxScanner Documentation</h1>
+    
+    <h2>Installation</h2>
+    <pre><code>pip install blackbox-scanner</code></pre>
+    
+    <h2>Classes Overview</h2>
+    
+    <h3>1. ScannedOutputs</h3>
+    <p>A utility class for storing and manipulating model outputs.</p>
+    <h4>Key Methods:</h4>
+    <ul>
+      <li><code>add_token_output(token, output)</code>: Add a token and its corresponding output.</li>
+      <li><code>get_total()</code>: Calculate the total of all outputs.</li>
+      <li><code>get_tokens()</code>: Retrieve all tokens and their outputs.</li>
+      <li><code>get_perplexity()</code>: Compute the average output value.</li>
+    </ul>
+    
+    <h3>2. GenerativeModelOutputs</h3>
+    <p>Analyze generative language model outputs.</p>
+    <h4>Methods:</h4>
+    <ul>
+      <li><code>sentence_log_likelihoods(words)</code>: Compute negative log-likelihoods for tokens
+        <pre><code>context = "The furry pet is a ..."
+output = gmo.sentence_log_likelihoods(context)
+# Returns ScannedOutputs with token probabilities</code></pre>
+      </li>
+      <li><code>view_topk(input_sentence, k, get_plot=False)</code>: Retrieve top-k probable next tokens
+        <pre><code>top_tokens = gmo.view_topk("Hello world", k=5)
+# Returns dictionary of top tokens and scores</code></pre>
+      </li>
+    </ul>
+    
+    <h3>3. EmbeddingOutputs</h3>
+    <p>Analyze and visualize word embeddings for encoder models.</p>
+    <h4>Key Method:</h4>
+    <ul>
+      <li><code>get_embeddings_output(words_list)</code>: Extract normalized word embeddings
+        <pre><code>words = ["machine", "learning"]
+embeddings = eo.get_embeddings_output(words)
+# Returns ScannedOutputs with word embeddings</code></pre>
+      </li>
+    </ul>
+    
+    <h2>Future Roadmap</h2>
+    <ul>
+      <li>Implement advanced token selection strategies</li>
+      <li>Enhance embedding visualization methods</li>
+      <li>Add support for additional model architectures</li>
+    </ul>
+    
+    <h2>Contributing</h2>
+    <p>We welcome contributions! Please submit pull requests to help improve BlackBoxScanner.</p>
+  </div>
+</body>
+</html>
