@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Model Inspector</title>
+  <style>
+    :root {
+      --primary-color: #457D58;
+      --secondary-color: #CBDDD1;
+      --dark-color: #272727;
+      --light-color: white;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    h2 {
+      color: var(--primary-color);
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 2px solid var(--secondary-color);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    select, button {
+      padding: 0.5rem 1rem;
+      margin-right: 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    select {
+      background-color: var(--secondary-color);
+      color: var(--dark-color);
+    }
+
+    button {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #346146;
+    }
+
+    .output {
+      margin-top: 2rem;
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .attention-bar {
+      background-color: var(--primary-color);
+      height: 20px;
+      margin: 4px 0;
+      border-radius: 4px;
+    }
+
+    .token-label {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>AI Model Inspector</h1>
+    <p>Explore attention scores and token likelihoods from language models</p>
+  </header>
+
+  <div class="container">
+    <h2>Enter Input</h2>
+    <textarea id="inputText" placeholder="Type a sentence or paragraph..."></textarea>
+
+    <select id="modeSelect">
+      <option value="attention">Visualize Attention</option>
+      <option value="likelihood">Token Likelihood</option>
+      <option value="topk">Top-K Prediction</option>
+    </select>
+
+    <button onclick="runAnalysis()">Analyze</button>
+
+    <div class="output" id="outputBox">
+      <!-- Dynamic output will appear here -->
+    </div>
+  </div>
+
+  <script>
+    function runAnalysis() {
+      const text = document.getElementById("inputText").value;
+      const mode = document.getElementById("modeSelect").value;
+      const outputBox = document.getElementById("outputBox");
+
+      // Placeholder for real backend call
+      outputBox.innerHTML = `<p><strong>Mode:</strong> ${mode}</p><p><strong>Input:</strong> ${text}</p>`;
+
+      // Simulated visualization (replace with real API data)
+      if (mode === "attention") {
+        outputBox.innerHTML += `<p class='token-label'>Simulated Token Attention:</p>`;
+        ["Hello", "world", "this", "is", "GPT-2"].forEach(token => {
+          const width = Math.floor(Math.random() * 100);
+          outputBox.innerHTML += `<div style='width:${width}%;' class='attention-bar'></div><p>${token} (${width})</p>`;
+        });
+      } else if (mode === "likelihood") {
+        outputBox.innerHTML += `<p class='token-label'>Simulated Token Likelihoods:</p><ul>`;
+        ["Hello", "world", "this", "is", "GPT-2"].forEach(token => {
+          const score = (Math.random() * 2).toFixed(3);
+          outputBox.innerHTML += `<li>${token}: ${score}</li>`;
+        });
+        outputBox.innerHTML += `</ul>`;
+      } else if (mode === "topk") {
+        outputBox.innerHTML += `<p class='token-label'>Top-K Predicted Tokens:</p><ul>`;
+        ["AI", "language", "brain", "model"].forEach(token => {
+          const score = (Math.random() * 10).toFixed(2);
+          outputBox.innerHTML += `<li>${token}: ${score}</li>`;
+        });
+        outputBox.innerHTML += `</ul>`;
+      }
+    }
+  </script>
+</body>
+
+</html>
