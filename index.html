@@ -10,18 +10,45 @@
       --secondary-color: #CBDDD1;
       --dark-color: #272727;
       --light-color: white;
+      --accent-color: #FF6B35;
+      --gray-light: #f5f5f5;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--light-color);
       color: var(--dark-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 4rem 0;
+      background-color: var(--light-color);
+    }
+    
+    .hero-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      width: 100%;
     }
     
     .logo {
@@ -34,15 +61,21 @@
       height: auto;
     }
     
-    .buttons {
+    .hero-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      width: 100%;
+    }
+    
+    .hero-buttons {
+      flex: 1;
+      min-width: 300px;
       display: flex;
       flex-direction: column;
       gap: 1rem;
       align-items: center;
-    }
-    
-    :root {
-      --accent-color: #FF6B35;
+      justify-content: center;
     }
     
     .button {
@@ -51,11 +84,14 @@
       text-decoration: none;
       padding: 1rem 2rem;
       border-radius: 8px;
-      font-size: 1.2rem;
-      font-weight: bold;
+      font-size: 1.1rem;
+      font-weight: 600;
       text-align: center;
-      width: 200px;
-      transition: all 0.2s ease;
+      width: 100%;
+      max-width: 250px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
     
     .button:hover {
@@ -72,17 +108,148 @@
       background-color: #FF8657;
       box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
     }
+    
+    /* About Section */
+    .about-card {
+      flex: 2;
+      min-width: 300px;
+      background-color: var(--secondary-color);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    
+    .about-card h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    
+    .about-section {
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-section h3 {
+      color: var(--dark-color);
+      margin-bottom: 0.75rem;
+      font-size: 1.3rem;
+    }
+    
+    .about-section p {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      color: #333;
+    }
+    
+    .list-items {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .list-items li {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--gray-light);
+      margin-top: 2rem;
+    }
+    
+    footer p {
+      color: var(--dark-color);
+      font-size: 0.9rem;
+    }
+    
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+    
+    .read-more-btn:hover {
+      color: var(--accent-color);
+    }
+    
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .hero-layout {
+        flex-direction: column;
+      }
+      
+      .hero-buttons {
+        order: 2;
+      }
+      
+      .about-card {
+        order: 1;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="logo">
-    <img src="blackboxscan.png" alt="BlackBoxScan Logo">
-  </div>
-  <div class="buttons">
-    <a href="aboutus.html" class="button">About Us</a>
-    <a href="documentation3.html" class="button">Documentation</a>
-    <a href="connect.html" class="button">Connect</a>
-    <a href="demo.html" class="button button-accent">Try the Demo Now!</a>
-  </div>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="logo">
+          <img src="blackboxscan.png" alt="BlackBoxScan Logo">
+        </div>
+        
+        <div class="hero-layout">
+          <div class="hero-buttons">
+            <a href="documentation3.html" class="button">Documentation</a>
+            <a href="connect.html" class="button">Connect</a>
+            <a href="demo.html" class="button button-accent">Try the Demo Now!</a>
+          </div>
+          
+          <div class="about-card">
+            <h2>About BlackBoxScan</h2>
+            
+            <div class="about-section">
+              <p>Open-sourced AI is the only way to ensure inclusivity. We noticed how curious members from other fields (biology, anthropology, law, business, economics, etc.) were very keen on exploring AI models and applications in their particular fields of research/industry.</p>
+              
+              <p>However, they were having a hard time not only writing code to access these models, but also knowing what different interpretability techniques they can apply to such models.</p>
+              
+              <p>Which is why, we came up with <strong>BlackBoxScan</strong>. It is an open-source project which showcases various AI explainability and interpretability techniques that can be implemented with just 1-2 lines of calls to the library.</p>
+            </div>
+            
+            <div class="about-section">
+              <h3>How You Can Help</h3>
+              <p>If you are keenly interested in AI applications into your field, we would love for you to try BlackBoxScan and reach back out to us with feedback (we read each one of them), as well as ideas to improve offerings.</p>
+              
+              <p>If you are an AI Researcher/Engineer who wishes to contribute your own interpretability techniques to help expand the repository, feel free to send a PR or a message sharing your ideas, and we will implement them.</p>
+              
+              <p>We are looking to expand this repository into:</p>
+              <ul class="list-items">
+                <li>More nuanced techniques for better visualisation/presentation of results.</li>
+                <li>Multi-modal models, starting with image models.</li>
+              </ul>
+            </div>
+            
+            <div class="about-section">
+              <h3>Future Vision</h3>
+              <p>We envision this to eventually become a massive repository which is able to incorporate all the SOTA interpretability techniques that keep being researched by top researchers around the world.</p>
+              <p>This could be a place where people can easily access latest AI research techniques and apply it to their specific use cases.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 BlackBoxScan. Open source AI interpretability tools for everyone.</p>
+    </div>
+  </footer>
 </body>
 </html>
