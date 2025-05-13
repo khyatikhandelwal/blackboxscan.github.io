@@ -3,6 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlackBoxScanner Documentation</title>
+  <style>
+    :root {
+      --primary-color: #457D58;
+      --secondary-color: #CBDDD1;
+      --dark-color: #272727;
+      --light-color: white;
+      --accent-color: #FF6B35;
+      --gray-light: #f5f5f5;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* Header Section from Demo Page */
+    header {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .logo {
+      margin-bottom: 1rem;
+    }
+    
+    .logo img {
+      max-width: 250px;
+      height: auto;
+    }
+    
+    header h1 {
+      color: var(--light-color);
+      margin-bottom: 0.5rem;
+    }
+    
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .nav-button {
+      background-color: var(--primary-color);
+      color: var(--light-color);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      min-width: 120px;
+      transition: background-color 0.2s ease;
+      display: inline-block;
+    }
+    
+    .nav-button:hover {
+      background-color: var(--dark-color);
+    }
+    
+    /* Content Container */
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      flex: 1;
+    }
+    
+    /* Documentation Styles */
+    h1, h2, h3 {
+      color: var(--primary-color);
+    }
+    
+    h1 {
+      margin-top: 0;
+    }
+    
+    code {
+      background-color: var(--secondary-color);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    
+    pre {
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+    
+    /* Demo Button */
+    .demo-button {
+      display: block;
+      background-color: var(--accent-color);
+      color: var(--light-color);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+      width: 100%;
+      max-width: 200px;
+      margin: 1.5rem 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .demo-button:hover {
+      background-color: #FF8657;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--gray-light);
+      margin-top: 2rem;
+    }
+    
+    footer p {
+      color: var(--dark-color);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header from Demo Page -->
+  <header>
+    <div class="logo">
+      <img src="blackboxscan.png" alt="BlackBox Scan Logo">
+    </div>
+    <h1>BlackBoxScan</h1>
+    <p>Open source AI interpretability tools for everyone</p>
+    <div class="nav-buttons">
+      <a href="aboutus.html" class="nav-button">About Us</a>
+      <a href="documentation3.html" class="nav-button">Documentation</a>
+      <a href="demo.html" class="nav-button">Demo</a>
+    </div>
+  </header>
   <title>Connect with Us</title>
   <style>
     :root {
